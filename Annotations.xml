@@ -1,0 +1,129 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZSES_SRV/$metadata">
+		<edmx:Include Alias="ZSES_SRV" Namespace="ZSES_SRV"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Alias="ZSES_SRVAnnotation" Namespace="sap.cbesh.cestbon.ZSES_SRVAnnotation">
+			<Annotations Target="ZSES_SRV.InboxInfo">
+				<Annotation Term="UI.DataPoint" Qualifier="DataPoint01">
+					<Record>
+						<PropertyValue Property="Title" String="Total Net Value"/>
+						<PropertyValue Property="Value" Path="Total"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record>
+						<PropertyValue Property="TypeName" String="Purchase Requisition"/>
+						<PropertyValue Property="TypeNamePlural" String="Purchase Requisition"/>
+						<PropertyValue Property="TypeImageUrl" String="/sap/bc/ui5_ui5/sap/mm_reqns1/images/purchaserequisition.jpg"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="SESNumber"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Service Entry Sheet"/>
+							<PropertyValue Property="Value" Path="SESNumber"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Purchase Order item"/>
+							<PropertyValue Property="Value" Path="POandItem"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Created By"/>
+							<PropertyValue Property="Value" Path="CreatedByName"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Provided By"/>
+							<PropertyValue Property="Value" Path="ProvidedByName"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Plant"/>
+							<PropertyValue Property="Value" Path="PlantName"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="GL Account"/>
+							<PropertyValue Property="Value" Path="GLAccountDescription"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Order Allocated"/>
+							<PropertyValue Property="Value" Path="OrderAllocated"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>						
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Total"/>
+							<PropertyValue Property="Value" Path="Total"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Used Vs Remaining"/>
+							<PropertyValue Property="Value" Path="UsedVsRemaining"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>	
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Long Text"/>
+							<PropertyValue Property="Value" Path="LongText"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>						
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="Label" String="General Information"/>
+							<PropertyValue Property="ID" String="GeneralInformation"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="Administrative Data"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+							<Annotation Term="UI.IsSummary"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Label" String="Items"/>
+							<PropertyValue Property="Target" AnnotationPath="SESItems/@UI.LineItem"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSES_SRV.SESItem">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Date"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>						
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Description"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ActualQuantity"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ActualValue"/>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

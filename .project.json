@@ -1,0 +1,13 @@
+{
+  "mockpreview": {
+    "mockUri": "",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "deploy": {
+    "destination": "EH1_Direct",
+    "name": "ZSES_APP_ANNO"
+  }
+}
